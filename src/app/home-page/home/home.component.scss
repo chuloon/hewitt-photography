@@ -1,0 +1,14 @@
+#home-container {
+    height: 100vh;
+    background-image: url("../../../assets/images/home.jpg");
+    background-size: cover;
+
+    .image-veil {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+        height: 100vh;
+
+        #header-image {
+            margin-left: 20px;
+        }
+    }
+}

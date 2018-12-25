@@ -1,0 +1,11 @@
+<div id="sidebar-container">
+  <div id="header-image">
+    <img src="../../../assets/images/hewitt-white.png">
+  </div>
+
+  <div id="nav-item-container">
+    <ul>
+      <li *ngFor="let navItem of navItems" (click)="navItemClick(navItem.link)">{{ navItem.label.toUpperCase() }}</li>
+    </ul>
+  </div>
+</div>

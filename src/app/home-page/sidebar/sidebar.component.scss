@@ -1,0 +1,21 @@
+#sidebar-container {
+    #nav-item-container {
+        max-width: 236px;
+
+        ul {
+            list-style-type: none;
+
+            li {
+                color: white;
+                margin-bottom: 25px;
+                cursor: pointer;
+                transition: transform 0.3s, color 0.3s;
+
+                &:hover {
+                    transform: translateX(15px);
+                    color: #D0F4FF;
+                }
+            }
+        }
+    }
+}
