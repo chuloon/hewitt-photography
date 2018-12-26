@@ -1,14 +1,57 @@
+$growth-factor: 1.2;
+$tileWidth: 9.5vw;
+$tileHeight: ($tileWidth / (16/9));
+$moveLeft: -($tileWidth * ($growth-factor - 1) / 2);
+$moveRight: $tileWidth * ($growth-factor - 1);
+
+$duration: 450ms;
+
 #carousel-container {
-    height: 150px;
     display: flex;
+    transition: transform $duration;
+    height: $tileHeight;
+    justify-content: space-between;
+
+    position: absolute;
+    bottom: 20px;
+
+    &:hover {
+        transform: translate3d($moveLeft, 0, 0);
+
+        .carousel-item img {
+            opacity: 0.5;
+        }
+    }
 
     .carousel-item {
-        img {
-            max-height: 150px;
-            transition: transform 450ms;
+        margin-right: 0.5vw;
+        transition: transform $duration, opacity $duration;
+        transform-origin: center left;
+        background-color: black;
+        cursor: pointer;
+
+            &:last-child {
+                margin-right: 0vw;
+            }
 
             &:hover {
-                transform: scale(1.2);
+                transform: scale($growth-factor);
+                transition: transform $duration;
+
+                & ~ .carousel-item {
+                    transform: translate3d($moveRight, 0, 0);
+                }
+            }
+
+        img {
+            width: $tileWidth;
+            height: $tileHeight;
+            max-height: 150px;
+
+            transition: opacity $duration;
+
+            &:hover {
+                opacity: 1;                
             }
         }
     }
