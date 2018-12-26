@@ -26,6 +26,6 @@ export class BackgroundImageService {
       this.url = this.carouselItems[Math.floor(Math.random() * 10)] !== this.url ? this.carouselItems[Math.floor(Math.random() * 10)] : this.carouselItems[Math.floor(Math.floor(Math.random() * 10) / 2)];
 
       this.changeBackgroundImage();
-    }, 5000);
+    }, 10000);
   }
 }
