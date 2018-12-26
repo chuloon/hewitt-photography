@@ -18,12 +18,20 @@ export class BackgroundImageService {
     "https://cdn.zenfolio.net/cdn2/pub/mwxzbr1lvckq/0/null/m/ipih7ei3pk1gx4vhkbxt/s/v-3/p2410581252-6.jpg?ts=6VH&tk=TDOuPlT2_d5icBFOgj2_Zrgpc0z08X8A9OKcq3ipSI6PSUcDsU-2UA6VSuPeYCZLfckM_D9B63tCFQzmE7rtxQ==&v=2&visitor=Su-a5h6BmZll8wUdZVQpKkPaZdZJgLJFZquMpM9enEkn&auth=exp=1545955199~acl=%2Fcdn2%2Fpub%2Fmwxzbr1lvckq%2F%2A~hmac=5ea3ffc5bf99a7e9451fc1b0c7ba48d9",
   ];
   changeTimer;
+  private index = 0;
 
   constructor() { }
 
   changeBackgroundImage = () => {
     this.changeTimer = setTimeout(() => {
-      this.url = this.carouselItems[Math.floor(Math.random() * 10)] !== this.url ? this.carouselItems[Math.floor(Math.random() * 10)] : this.carouselItems[Math.floor(Math.floor(Math.random() * 10) / 2)];
+      if((this.index + 1) > (this.carouselItems.length - 1)) {
+        this.index = 0;
+      }
+      else {
+        this.index++;
+      }
+
+      this.url = this.carouselItems[this.index];
 
       this.changeBackgroundImage();
     }, 10000);
