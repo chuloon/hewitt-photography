@@ -11,6 +11,7 @@ $duration: 450ms;
     transition: transform $duration;
     height: $tileHeight;
     justify-content: space-between;
+    width: 100%;
 
     position: absolute;
     bottom: 20px;

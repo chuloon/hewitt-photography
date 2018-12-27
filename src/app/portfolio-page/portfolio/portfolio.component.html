@@ -1,0 +1,7 @@
+<div id="portfolio-container">
+  <div class="album-container">
+    <div class="album" *ngFor="let album of testAlbums">
+      <app-picture-frame [id]="album.id" [imageUrl]="album.thumbnail"></app-picture-frame>
+    </div>
+  </div>
+</div>
